@@ -3,3 +3,27 @@
 @tailwind components;
 /* purgecss end ignore */
 @tailwind utilities;
+
+body {
+}
+.north-bay-label {
+  background-color: #ef6f6c;
+  color: #01295f;
+}
+.south-bay-label {
+  color: #01295f;
+  background-color: #437f97;
+}
+.east-bay-label {
+  background-color: #7fb685;
+  color: #01295f;
+}
+.peninsula-label {
+  background-color: #e3bac6;
+  color: #01295f;
+}
+.san-francisco-label {
+  background-color: #f2c57c;
+  /* color: white; */
+  color: #01295f;
+}
