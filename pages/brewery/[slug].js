@@ -2,19 +2,23 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 import ErrorPage from "next/error";
 import Container from "../../components/container";
-import PostBody from "../../components/post-body";
+import BreweryBody from "../../components/brewery-body";
 import MoreBreweries from "../../components/more-breweries";
 import Header from "../../components/header";
 import BreweryHeader from "../../components/brewery-header";
 import SectionSeparator from "../../components/section-separator";
 import Layout from "../../components/layout";
-
+import ContentfulImage from "../../components/contentful-image";
+import Link from "next/link";
+import BreweryMap from "../../components/brewery-map";
 import {
   getBreweryAndMoreBreweries,
   getAllBreweriesWithSlug,
 } from "../../lib/api";
 import PostTitle from "../../components/post-title";
 import { CMS_NAME } from "../../lib/constants";
+import { BsInstagram } from "react-icons/bs";
+import { BsFacebook } from "react-icons/bs";
 
 export default function Brewery({ brewery, moreBreweries, preview }) {
   const router = useRouter();
@@ -43,6 +47,31 @@ export default function Brewery({ brewery, moreBreweries, preview }) {
                 // coverImage={post.coverImage}
                 // date={post.date}
               />
+              <div>
+                <ContentfulImage
+                  src={brewery.breweryLogo.url}
+                  width="200"
+                  height="200"
+                  alt={brewery.breweryName}
+                />
+              </div>
+              <div className="flex gap-3">
+                <Link target="_blank" href={brewery.instagramUrl}>
+                  <BsInstagram />
+                </Link>
+                <Link target="_blank" href={brewery.facebookUrl}>
+                  <BsFacebook />
+                </Link>
+                {brewery.breweryWebsite}
+                {brewery.breweryPhone}
+              </div>
+              <BreweryBody content={brewery.breweryAbout} />
+              {brewery.location.lat}
+
+              {brewery.location.lon}
+              {brewery && brewery.location && (
+                <BreweryMap coords={brewery.location} />
+              )}
             </article>
             <SectionSeparator />
             {moreBreweries && moreBreweries.length > 0 && (

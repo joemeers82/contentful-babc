@@ -14,7 +14,8 @@ const customMarkdownOptions = (content) => ({
   },
 });
 
-export default function BreweryBody({ brewery }) {
+export default function BreweryBody({ content }) {
+  console.log(content);
   return (
     <div className="max-w-2xl mx-auto">
       <div className={markdownStyles["markdown"]}>

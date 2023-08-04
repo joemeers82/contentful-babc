@@ -36,22 +36,31 @@ export default function Index({ preview, allBreweries }) {
         <Container>
           <Intro />
           <div className="w-full pb-10 mb-10">
-            <ul className="flex gap-1 md:gap-3 flex-col md:flex-row">
+            <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 md:gap-3 ">
               <li
-                className="rounded-lg border p-2 md:p-1 flex items-center justify-center cursor-pointer transition-colors duration-200 hover:bg-gray-300"
+                className={`rounded-lg border p-2 md:p-1 flex items-center justify-center cursor-pointer transition-colors duration-200 ${
+                  selectedLocale === "All Bay Area"
+                    ? "shadow-lg shadow-[#01295f]-500/50"
+                    : ""
+                }`}
                 onClick={() => setSelectedLocale("All Bay Area")}
               >
                 All Bay Area
               </li>
-              {locales.map((locale) => {
+              {locales.map((locale, i) => {
                 return (
                   <li
+                    key={i}
                     className={`${locale
                       .toLowerCase()
                       .replace(
                         /\s/g,
                         "-"
-                      )}-label rounded-lg text-center flex items-center justify-center p-2 md:p-1 flex-1 text-sm cursor-pointer transition-colors duration-200 hover:bg-gray-300`}
+                      )}-label rounded-lg text-center flex items-center ease-in-out justify-center p-2 md:p-1 flex-1 text-sm cursor-pointer transition-colors transition-shadow duration-200 ${
+                      selectedLocale === locale
+                        ? "shadow-lg shadow-[#01295f]-500/50 transition-shadow duration-200 ease-in-out"
+                        : ""
+                    }`}
                     onClick={() => setSelectedLocale(locale)}
                   >
                     {locale}
