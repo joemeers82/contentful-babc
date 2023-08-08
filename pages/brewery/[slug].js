@@ -55,23 +55,33 @@ export default function Brewery({ brewery, moreBreweries, preview }) {
                   alt={brewery.breweryName}
                 />
               </div>
-              <div className="flex gap-3">
+              <div className="flex gap-3  ">
                 <Link target="_blank" href={brewery.instagramUrl}>
                   <BsInstagram />
                 </Link>
                 <Link target="_blank" href={brewery.facebookUrl}>
                   <BsFacebook />
                 </Link>
-                {brewery.breweryWebsite}
+
                 {brewery.breweryPhone}
               </div>
-              <BreweryBody content={brewery.breweryAbout} />
-              {brewery.location.lat}
-
-              {brewery.location.lon}
-              {brewery && brewery.location && (
-                <BreweryMap coords={brewery.location} />
-              )}
+              <div className="flex flex-col md:flex-row md:justify-between">
+                <div>
+                  <BreweryBody content={brewery.breweryAbout} />
+                  <a
+                    className="hover:underline"
+                    href={brewery.breweryWebsite}
+                    target="_blank"
+                  >
+                    Website
+                  </a>
+                </div>
+                <div>
+                  {brewery && brewery.location && (
+                    <BreweryMap coords={brewery.location} />
+                  )}
+                </div>
+              </div>
             </article>
             <SectionSeparator />
             {moreBreweries && moreBreweries.length > 0 && (
