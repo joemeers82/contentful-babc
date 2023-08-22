@@ -1,6 +1,6 @@
 # A Statically Generated Blog Example
 
-Leverage the power of **Next.js**, **Contentful**, and the **Google Map API** to create a dynamic blog platform.
+Leverage the power of **Next.js**, **Contentful**, and the **Google Map API** to create a blog.
 
 ## Features
 
