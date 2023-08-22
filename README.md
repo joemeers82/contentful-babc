@@ -1,7 +1,15 @@
-# A statically generated blog example using Next.js and Contentful
+# A Statically Generated Blog Example
 
-This example showcases Next.js's [Static Generation](https://nextjs.org/docs/basic-features/pages) feature using [Contentful](https://www.contentful.com/) as the data source.
+Leverage the power of **Next.js**, **Contentful**, and the **Google Map API** to create a dynamic blog platform.
+
+## Features
+
+- **Next.js** for Static Site Generation.
+- Content management through **Contentful**.
+- Location data visualization with **Google Map API**.
 
 ## Demo
 
-### [https://next-blog-contentful.vercel.app/](https://contentful-babc.vercel.app/)
+[Bay Area Brew Club](https://contentful-babc.vercel.app/)
+
+Experience the blog in action, showcasing how Contentful manages the content and how Google Map API visualizes the location data.
